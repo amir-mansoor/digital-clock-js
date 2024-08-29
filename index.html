@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    div {
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: "Orbitron", sans-serif;
+      font-optical-sizing: auto;
+
+      font-style: normal;
+      font-size: 100px;
+    }
+  </style>
+  <body>
+    <div class="clock"></div>
+
+    <script>
+      const clock = document.querySelector(".clock");
+
+      function run() {
+        const now = new Date();
+
+        const hours = now.getHours();
+        const mins = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        clock.innerHTML = `<h1>${hours}:${mins}:${seconds}</h1>`;
+      }
+
+      setInterval(run, 1000);
+      run();
+      //
+    </script>
+  </body>
+</html>
